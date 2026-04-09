@@ -65,4 +65,4 @@ Bu proje açık kaynaklıdır! Katkıda bulunmak isterseniz:
 Bu proje [MIT Lisansı](LICENSE) ile lisanslanmıştır. Daha fazla bilgi için LICENSE dosyasına göz atabilirsiniz.
 
 ---
-*Geleceğin notlarını bugünden keşfedin. - UniNotes Ekibi*
+*Geleceğin notlarını bugünden keşfedin. - UniNotes*
