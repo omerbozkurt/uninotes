@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UniNotes | Üniversite PDF Ders Notu Arama Motoru</title>
+    <meta name="description" content="Üniversite öğrencileri için modern, hızlı ve ücretsiz PDF ders notu arama platformu.">
+    
+    <!-- yazı Tipleri: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- İkon Paketi: Remix Icon -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    
+    <!-- Proje Stil Dosyası -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <!-- Arka Plan Dekoratif Elemanları -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+
+    <!-- Navigasyon Çubuğu -->
+    <nav class="navbar glass">
+        <div class="nav-container">
+            <a href="#" class="brand">
+                <div class="logo-icon">
+                    <i class="ri-file-pdf-2-line"></i>
+                </div>
+                <span class="logo-text">Uni<span class="text-primary">Notes</span></span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero (Karşılama) Bölümü -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Aradığın Notu <span class="text-accent">Saniyeler İçinde</span> Bul</h1>
+            <p class="hero-subtitle">Tüm fakültelerden on binlerce üniversite vize/final ders notu, özet ve akademik dökümanlara doğrudan erişin.</p>
+            
+            <!-- Arama Kutusu -->
+            <div class="search-container glass-strong">
+                <i class="ri-search-line search-icon"></i>
+                <input type="text" class="search-input" placeholder="Ders adı, konu veya yazar ara..." id="mainSearch">
+                <button class="btn btn-primary btn-search">Arama Yap</button>
+            </div>
+
+            <!-- Kontrol Paneli -->
+            <div id="controlsPanel" class="controls-panel glass" style="display: none;">
+                <!-- Sonuç Sayacı -->
+                <div class="results-count" id="resultsCount">0 dosya bulundu</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- PDF Önizleme Modalı -->
+    <div id="previewModal" class="modal">
+        <div class="modal-content glass-strong">
+            <div class="modal-header">
+                <h3 id="previewTitle">Döküman Önizleme</h3>
+                <button class="btn-close" id="btnCloseModal"><i class="ri-close-line"></i></button>
+            </div>
+            <div class="modal-body">
+                <!-- PDF içeriği burada iframe içinde görüntülenecek -->
+                <iframe id="previewFrame" src="" frameborder="0"></iframe>
+            </div>
+            <div class="modal-footer">
+                <a id="modalDownloadBtn" href="#" target="_blank" class="btn btn-primary">
+                    <i class="ri-download-cloud-line"></i> Dosyayı İndir
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ana İçerik Alanı -->
+    <main class="main-container">
+        <!-- Sonuçların Listelendiği Grid -->
+        <div class="grid" id="notesGrid">
+            <div class="empty-state" style="grid-column: 1 / -1; text-align: center; padding: 60px 40px; color: var(--color-text-muted);">
+                <div class="empty-icon-wrapper">
+                    <i class="ri-flashlight-line"></i>
+                </div>
+                <h3 style="font-size: 1.5rem; color: var(--color-white); margin-bottom: 8px;">Aramaya Başlayın</h3>
+                <p>İhtiyacınız olan ders notlarını bulmak için yukarıdan bir arama terimi girin.</p>
+            </div>
+        </div>
+
+        <!-- Pagination (Daha Fazla Yükle) Butonu -->
+        <div id="loadMoreContainer" class="load-more-container" style="display: none; justify-content: center; margin-top: 50px;">
+            <button id="btnLoadMore" class="btn btn-secondary btn-load-more">
+                <i class="ri-add-line"></i> Daha Fazla Yükle
+            </button>
+        </div>
+    </main>
+
+    <!-- Alt Bilgi (Footer) -->
+    <footer class="footer">
+        <div class="footer-bottom">
+            <p>&copy; 2026 UniNotes.</p>
+        </div>
+    </footer>
+
+    <!-- Proje Mantığı (JavaScript) -->
+    <script src="script.js"></script>
+</body>
+</html>
