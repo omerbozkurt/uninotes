@@ -2,7 +2,7 @@
 
 UniNotes, üniversite öğrencilerinin ders notlarına, özetlere ve akademik dökümanlara saniyeler içinde ulaşmasını sağlayan modern, hızlı ve açık kaynaklı bir arama platformudur. Google arama motorunun gücünü kullanarak internet üzerindeki sadece akademik PDF dosyalarını tarar ve size reklamsız, temiz bir listeleme sunar.
 
-![UniNotes Preview](https://via.placeholder.com/800x400?text=UniNotes+Modern+Interface+Preview)
+![UniNotes Preview](assets/preview.png)
 
 ## ✨ Öne Çıkan Özellikler
 
