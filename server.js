@@ -4,7 +4,11 @@ const cors = require('cors');
 const axios = require('axios');
 
 const app = express();
-app.use(cors());
+app.use(cors({
+    origin: '*', // Üretim modunda belirli bir domain ile kısıtlamanız güvenli olur.
+    methods: ['GET', 'POST'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+}));
 
 // API ayarlarını .env dosyasından çekiyoruz, bu sayede sistemimizi güvenli tutuyoruz
 const SERPAPI_KEY = process.env.SERPAPI_KEY;

@@ -5,6 +5,12 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     
+    // Uygulama Ayarları - Üretime geçerken burayı gerçek backend adresinizle değiştirin.
+    // Örn: https://uninotes-backend.onrender.com
+    const API_BASE_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+        ? 'http://localhost:3000'
+        : ''; // Burayı deploy ettiğiniz backend adresiyle doldurun.
+
     // Temel kullanıcı arayüzü elementlerini seçiyoruz
     const searchBtn = document.querySelector('.btn-search');
     const searchInput = document.getElementById('mainSearch');
@@ -67,7 +73,14 @@ document.addEventListener('DOMContentLoaded', () => {
              * Node.js backend servisimize istek atıyoruz. 
              * Offset parametresi ile sayfalama (pagination) yapıyoruz.
              */
-            const response = await fetch(`http://localhost:3000/api/search?q=${encodeURIComponent(query)}&start=${currentOffset}`);
+            const apiUrl = `${API_BASE_URL}/api/search?q=${encodeURIComponent(query)}&start=${currentOffset}`;
+            
+            // Eğer API adresi boşsa (Production modunda ve URL set edilmemişse) kullanıcıyı uyar
+            if (!API_BASE_URL && window.location.hostname !== 'localhost') {
+                throw new Error("API adresi yapılandırılmamış. Lütfen script.js içindeki API_BASE_URL değişkenini güncelleyin.");
+            }
+
+            const response = await fetch(apiUrl);
             if (!response.ok) throw new Error("Dosyalar alınırken bir hata oluştu.");
             
             const data = await response.json();
