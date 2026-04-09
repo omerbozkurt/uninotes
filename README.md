@@ -19,7 +19,7 @@ Projeyi kendi bilgisayarınızda çalıştırmak için aşağıdaki adımları t
 ### 1. Hazırlık
 Bu depoyu klonlayın veya zip olarak indirin:
 ```bash
-git clone https://github.com/kullaniciadi/UniNotes.git
+git clone https://github.com/omerbozkurt/uninotes.git
 cd UniNotes
 ```
 
