@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Örn: https://uninotes-backend.onrender.com
     const API_BASE_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
         ? 'http://localhost:3000'
-        : ''; // Burayı deploy ettiğiniz backend adresiyle doldurun.
+        : 'https://uninotes-63zr.onrender.com';
 
     // Temel kullanıcı arayüzü elementlerini seçiyoruz
     const searchBtn = document.querySelector('.btn-search');
